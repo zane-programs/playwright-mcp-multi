@@ -1,0 +1,31 @@
+name: CI
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+    branches: [main]
+  workflow_dispatch:
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '24'
+          cache: 'npm'
+
+      - name: Install dependencies
+        run: npm ci
+
+      - name: Install Chromium for @playwright/mcp
+        run: node node_modules/@playwright/mcp/cli.js install-browser chromium
+
+      - name: Run tests
+        env:
+          CI: '1'
+          HEADLESS: '1'
+        run: npm run ctest

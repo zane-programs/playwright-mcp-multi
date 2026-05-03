@@ -1,0 +1,50 @@
+{
+  "name": "playwright-mcp-multi",
+  "version": "0.1.0",
+  "description": "Multi-session proxy MCP server for Playwright. Run multiple Playwright browsers concurrently from one MCP connection, and avoid Chromium profile-lock conflicts when several MCP clients share a workspace.",
+  "keywords": [
+    "mcp",
+    "playwright",
+    "playwright-mcp",
+    "model-context-protocol",
+    "browser-automation",
+    "claude",
+    "claude-code"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/zane-programs/playwright-mcp-multi.git"
+  },
+  "homepage": "https://github.com/zane-programs/playwright-mcp-multi",
+  "bugs": "https://github.com/zane-programs/playwright-mcp-multi/issues",
+  "license": "Apache-2.0",
+  "author": "Zane St. John",
+  "engines": {
+    "node": ">=18"
+  },
+  "main": "multi-cli.js",
+  "bin": {
+    "playwright-mcp-multi": "multi-cli.js"
+  },
+  "files": [
+    "multi-cli.js",
+    "lib/",
+    "LICENSE",
+    "NOTICE",
+    "README.md"
+  ],
+  "scripts": {
+    "test": "playwright test",
+    "ctest": "playwright test --project=chrome",
+    "install-browser": "node node_modules/@playwright/mcp/cli.js install-browser chromium"
+  },
+  "dependencies": {
+    "@modelcontextprotocol/sdk": "^1.25.2",
+    "@playwright/mcp": "^0.0.73",
+    "commander": "^12.1.0"
+  },
+  "devDependencies": {
+    "@playwright/test": "^1.49.0",
+    "@types/node": "^22.7.0"
+  }
+}

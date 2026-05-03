@@ -1,0 +1,16 @@
+playwright-mcp-multi
+Copyright 2026 Zane St. John
+
+Licensed under the Apache License, Version 2.0 (the "License").
+
+This product depends at runtime on the following Microsoft-maintained
+packages, both licensed under the Apache License, Version 2.0:
+
+  * @playwright/mcp  (https://github.com/microsoft/playwright-mcp)
+      Copyright (c) Microsoft Corporation.
+
+  * playwright / playwright-core  (https://github.com/microsoft/playwright)
+      Copyright (c) Microsoft Corporation.
+
+playwright-mcp-multi adds a thin multi-session proxy layer on top of
+@playwright/mcp; it does not modify or redistribute their source.
